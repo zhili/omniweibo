@@ -1,0 +1,5 @@
+cron:
+- description: schedule job
+  url: /updatestatus
+  schedule: every 10 minutes
+
