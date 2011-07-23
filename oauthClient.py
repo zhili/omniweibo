@@ -237,6 +237,6 @@ class WeiboClient():
         headers = {'Content-Type' :'application/x-www-form-urlencoded'}
         self._connection.request('POST', STATUSUPDATE_URL, body=oauth_request.to_postdata(), headers=headers)
         response = self._connection.getresponse()
-        print response.read()
+        #print response.read()
 
 

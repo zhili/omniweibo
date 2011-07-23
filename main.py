@@ -10,7 +10,7 @@ from uuid import uuid4
 import oauthClient
 from models import Quotes
 import random
-from google.appengine.ext import db
+# from google.appengine.ext import db
 
 omniweibo_message = """
     <html>
@@ -23,7 +23,6 @@ omniweibo_message = """
         <p><a href='/oauth/session'><img src='/static/sign-in-with-twitter.png' border='0'></a> 
         or <a href='/oauth/change'>change your key here</a></p>
          <p><a href='/updatestatus'>update state here</a></p>
-         <p><a href='/delete'>delete state here</a></p>
     </body></html>
     """
 
@@ -64,12 +63,12 @@ class MainPage(webapp.RequestHandler):
             if user_access_token is None :
                 return error_output(self, 'Can not find this user from db')
             weiboClient = oauthClient.WeiboClient(user_access_token, user_access_secret)
-            tweets = shuffle_random_quote().encode('utf8') + "#3G就选沃#"
+            tweets = shuffle_random_quote().encode('utf8') + "#极速互联随我行#"
             weiboClient.updateStatus(tweets)
             # 
-        if mode=='delete':
-            res = Quotes.all()
-            db.delete(res)
+        # if mode=='delete':
+        #     res = Quotes.all()
+        #     db.delete(res)
             
 
 

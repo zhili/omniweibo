@@ -1,5 +1,4 @@
 cron:
-- description: schedule job
+- description: schedule update
   url: /updatestatus
-  schedule: every 10 minutes
-
+  schedule: every 30 minutes
